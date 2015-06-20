@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('touchmove', this.onTouchMove, false);
     },
     // deviceready Event Handler
     //
@@ -34,6 +35,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+    },
+    // touhcMove Event Handler
+    //
+    // Handle touch on the device
+    onTouchMove: function(event) {
+        console.log(event.touches);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
